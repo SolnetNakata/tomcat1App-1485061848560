@@ -23,6 +23,12 @@ public class SimpleServlet extends HttpServlet {
         response.setContentType("text/html");
         response.getWriter().print("Hello World!");
         System.out.print("AddMessage");
+        Context context = new InitialContext();
+        DataSource dataSource=(DataSource)context.lookup("jdbc/elephantsql");
+        Connection conn = dataSource.getConnection();
+        if(conn != null){
+        	System.out.println("debug: DBコネクション取得");
+        }
     }
 
 }
