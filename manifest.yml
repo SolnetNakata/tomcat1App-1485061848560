@@ -1,0 +1,12 @@
+applications:
+- path: target/TomcatHelloWorldApp.war
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  name: tomcat1App
+  host: tomcat1App
+  disk_quota: 1024M
+  services:
+  - availability-monitoring-auto
+  - elephantsql
+  buildpack: java_buildpack
